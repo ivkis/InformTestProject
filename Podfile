@@ -6,5 +6,5 @@ target 'InformTestProject' do
   use_frameworks!
 
   # Pods for InformTestProject
-
+    pod 'R.swift'
 end
