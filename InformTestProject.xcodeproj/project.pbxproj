@@ -13,6 +13,7 @@
 		A79744901F486B3800573091 /* InformTestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A797448E1F486B3800573091 /* InformTestProject.xcdatamodeld */; };
 		A79744921F486B3800573091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79744911F486B3800573091 /* Assets.xcassets */; };
 		A79744951F486B3800573091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79744931F486B3800573091 /* LaunchScreen.storyboard */; };
+		A797449E1F4872FB00573091 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797449D1F4872FB00573091 /* R.generated.swift */; };
 		F8AFE41399350BCD96BD076F /* Pods_InformTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC883FE794E30A021B8198CD /* Pods_InformTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		A79744911F486B3800573091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A79744941F486B3800573091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A79744961F486B3800573091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A797449D1F4872FB00573091 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		CC883FE794E30A021B8198CD /* Pods_InformTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InformTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E84935F7280951975A5C53 /* Pods-InformTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InformTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-InformTestProject/Pods-InformTestProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				A79744871F486B3800573091 /* AppDelegate.swift */,
+				A797449D1F4872FB00573091 /* R.generated.swift */,
 				A79744891F486B3800573091 /* ViewController.swift */,
 				A797448B1F486B3800573091 /* Main.storyboard */,
 				A79744911F486B3800573091 /* Assets.xcassets */,
@@ -99,6 +102,7 @@
 			buildConfigurationList = A79744991F486B3800573091 /* Build configuration list for PBXNativeTarget "InformTestProject" */;
 			buildPhases = (
 				8BF9AEF5AFCD98DCD33DD4DC /* [CP] Check Pods Manifest.lock */,
+				A797449C1F486F5600573091 /* R.Swift */,
 				A79744801F486B3800573091 /* Sources */,
 				A79744811F486B3800573091 /* Frameworks */,
 				A79744821F486B3800573091 /* Resources */,
@@ -208,6 +212,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A797449C1F486F5600573091 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.Swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/InformTestProject\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -218,6 +236,7 @@
 				A797448A1F486B3800573091 /* ViewController.swift in Sources */,
 				A79744881F486B3800573091 /* AppDelegate.swift in Sources */,
 				A79744901F486B3800573091 /* InformTestProject.xcdatamodeld in Sources */,
+				A797449E1F4872FB00573091 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +402,7 @@
 				A797449B1F486B3800573091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
