@@ -17,9 +17,31 @@ class PersonInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
     }
 
     @IBAction func updateButtonTapped(_ sender: Any) {
+        loadData()
+    }
+
+    func loadData() {
+        self.nameLabel.text = ""
+        self.dateLabel.text = ""
+        self.descriptionLabel.text = ""
+        API.shared.getPersonInfo { personInfo in
+            if let personInfo = personInfo {
+                self.nameLabel.text = personInfo.name
+                self.dateLabel.text = personInfo.birthday
+                self.descriptionLabel.text = personInfo.aboutText
+            } else {
+                let alertController = UIAlertController(title: "Данные отсутствуют.", message: "Извините, произошла ошибка. Обновите запрос.", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Обновить", style: .default, handler: { action in
+                    self.loadData()
+                })
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
 }
 
