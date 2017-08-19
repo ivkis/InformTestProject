@@ -35,10 +35,12 @@ class PersonInfoViewController: UIViewController {
                 self.descriptionLabel.text = personInfo.aboutText
             } else {
                 let alertController = UIAlertController(title: "Данные отсутствуют.", message: "Извините, произошла ошибка. Обновите запрос.", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Обновить", style: .default, handler: { action in
+                let alertActionUpdate = UIAlertAction(title: "Обновить", style: .default, handler: { action in
                     self.loadData()
                 })
-                alertController.addAction(alertAction)
+                let alertActionCancel = UIAlertAction(title: "Отмена", style: .default, handler: nil)
+                alertController.addAction(alertActionUpdate)
+                alertController.addAction(alertActionCancel)
                 self.present(alertController, animated: true, completion: nil)
             }
         }
