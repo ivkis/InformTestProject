@@ -11,8 +11,15 @@ import UIKit
 
 class PersonInfoViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction func updateButtonTapped(_ sender: Any) {
     }
 }
 
