@@ -13,7 +13,7 @@
         <!--Item 3-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InformTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,7 +51,7 @@
         <!--Item 4-->
         <scene sceneID="q96-SN-gbU">
             <objects>
-                <viewController id="iil-2O-sYi" customClass="Per" sceneMemberID="viewController">
+                <viewController id="iil-2O-sYi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="634-gI-cUM"/>
                         <viewControllerLayoutGuide type="bottom" id="CSq-5J-Yvs"/>
@@ -230,7 +230,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Person info" id="NrE-8u-uAb"/>
                     <connections>
-                        <outlet property="date" destination="JUc-Ky-Bgs" id="RuC-kf-jo0"/>
                         <outlet property="dateLabel" destination="JUc-Ky-Bgs" id="00P-UV-uAY"/>
                         <outlet property="descriptionLabel" destination="P3s-v5-qnH" id="6xK-Ao-9AY"/>
                         <outlet property="nameLabel" destination="zyf-rU-OAi" id="ifr-UF-saX"/>
