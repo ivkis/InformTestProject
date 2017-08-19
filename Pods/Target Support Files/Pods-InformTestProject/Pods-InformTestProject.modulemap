@@ -1,0 +1,6 @@
+framework module Pods_InformTestProject {
+  umbrella header "Pods-InformTestProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
