@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-fU-zdp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-fU-zdp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivN-i1-3lJ">
@@ -100,11 +100,11 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.058823529409999999" green="0.18039215689999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="4pS-Qv-KdX"/>
                                             <constraint firstAttribute="bottom" secondItem="zyf-rU-OAi" secondAttribute="bottom" constant="12" id="Pns-VB-J4T"/>
                                             <constraint firstItem="RLM-sF-8EZ" firstAttribute="top" secondItem="ivN-i1-3lJ" secondAttribute="top" constant="12" id="dc8-g5-7xe"/>
                                             <constraint firstItem="RLM-sF-8EZ" firstAttribute="leading" secondItem="ivN-i1-3lJ" secondAttribute="leading" constant="12" id="fAh-KS-ugw"/>
                                             <constraint firstAttribute="trailing" secondItem="zyf-rU-OAi" secondAttribute="trailing" constant="12" id="gfq-Sk-jW0"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RLM-sF-8EZ" secondAttribute="bottom" constant="12.5" id="hIa-oF-OLD"/>
                                             <constraint firstItem="zyf-rU-OAi" firstAttribute="top" secondItem="ivN-i1-3lJ" secondAttribute="top" constant="12" id="j9b-rg-8U1"/>
                                             <constraint firstItem="zyf-rU-OAi" firstAttribute="leading" secondItem="RLM-sF-8EZ" secondAttribute="trailing" priority="750" constant="8" id="sAe-p4-d2Z"/>
                                         </constraints>
@@ -132,7 +132,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.058823529409999999" green="0.18039215689999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="BU3-bb-D7E"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cSc-ms-KhH" secondAttribute="bottom" constant="12.5" id="4FF-GB-ckN"/>
                                             <constraint firstItem="cSc-ms-KhH" firstAttribute="top" secondItem="Dlf-wX-whk" secondAttribute="top" constant="12" id="Ihx-u7-h1P"/>
                                             <constraint firstAttribute="trailing" secondItem="JUc-Ky-Bgs" secondAttribute="trailing" constant="12" id="J4Z-6h-7M1"/>
                                             <constraint firstItem="JUc-Ky-Bgs" firstAttribute="top" secondItem="Dlf-wX-whk" secondAttribute="top" constant="12" id="WK3-tb-Vy7"/>
@@ -166,11 +166,11 @@
                                         <constraints>
                                             <constraint firstItem="0wx-ib-0BU" firstAttribute="top" secondItem="9qY-82-B0b" secondAttribute="top" constant="12" id="1kW-Fs-bwX"/>
                                             <constraint firstAttribute="trailing" secondItem="P3s-v5-qnH" secondAttribute="trailing" constant="12" id="EQl-v8-EsA"/>
-                                            <constraint firstAttribute="height" constant="45" id="FcM-FL-VBq"/>
                                             <constraint firstItem="0wx-ib-0BU" firstAttribute="leading" secondItem="9qY-82-B0b" secondAttribute="leading" constant="12" id="HcR-WE-294"/>
                                             <constraint firstAttribute="bottom" secondItem="P3s-v5-qnH" secondAttribute="bottom" constant="12" id="JaH-1v-fju"/>
                                             <constraint firstItem="P3s-v5-qnH" firstAttribute="top" secondItem="9qY-82-B0b" secondAttribute="top" constant="12" id="MQ1-E6-M6q"/>
                                             <constraint firstItem="P3s-v5-qnH" firstAttribute="leading" secondItem="0wx-ib-0BU" secondAttribute="trailing" priority="750" constant="8" id="WkK-Nx-ssq"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0wx-ib-0BU" secondAttribute="bottom" constant="12.5" id="twX-5S-Kem"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
