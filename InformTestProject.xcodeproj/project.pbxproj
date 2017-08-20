@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7876D051F4983F800AED4A0 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7876D041F4983F800AED4A0 /* CityTableViewController.swift */; };
+		A7876D091F499B2000AED4A0 /* CityLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7876D081F499B2000AED4A0 /* CityLoadingCell.swift */; };
 		A79744881F486B3800573091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79744871F486B3800573091 /* AppDelegate.swift */; };
 		A797448A1F486B3800573091 /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79744891F486B3800573091 /* PersonInfoViewController.swift */; };
 		A797448D1F486B3800573091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A797448B1F486B3800573091 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		5D10BBF9CF2A6595609B67CD /* Pods-InformTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InformTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InformTestProject/Pods-InformTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A7876D041F4983F800AED4A0 /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		A7876D081F499B2000AED4A0 /* CityLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityLoadingCell.swift; sourceTree = "<group>"; };
 		A79744841F486B3800573091 /* InformTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InformTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79744871F486B3800573091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A79744891F486B3800573091 /* PersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
@@ -87,9 +89,10 @@
 				A79744871F486B3800573091 /* AppDelegate.swift */,
 				A7CD55D71F4879D300034574 /* API.swift */,
 				A7CD55D91F4879FE00034574 /* Constants.swift */,
-				A7CD55D51F48780000034574 /* Person.swift */,
 				A7CD55DB1F48893E00034574 /* CityInfo.swift */,
 				A7876D041F4983F800AED4A0 /* CityTableViewController.swift */,
+				A7876D081F499B2000AED4A0 /* CityLoadingCell.swift */,
+				A7CD55D51F48780000034574 /* Person.swift */,
 				A79744891F486B3800573091 /* PersonInfoViewController.swift */,
 				A797448B1F486B3800573091 /* Main.storyboard */,
 				A79744911F486B3800573091 /* Assets.xcassets */,
@@ -251,6 +254,7 @@
 				A7876D051F4983F800AED4A0 /* CityTableViewController.swift in Sources */,
 				A7CD55D61F48780000034574 /* Person.swift in Sources */,
 				A797448A1F486B3800573091 /* PersonInfoViewController.swift in Sources */,
+				A7876D091F499B2000AED4A0 /* CityLoadingCell.swift in Sources */,
 				A79744881F486B3800573091 /* AppDelegate.swift in Sources */,
 				A79744901F486B3800573091 /* InformTestProject.xcdatamodeld in Sources */,
 				A7CD55DA1F4879FE00034574 /* Constants.swift in Sources */,

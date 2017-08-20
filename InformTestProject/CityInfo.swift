@@ -21,4 +21,11 @@ class CityInfo {
         totalPages = json["pages"] as? Int ?? 0
         currentPage = json["page"] as? Int ?? 0
     }
+
+    init(previousPages: CityInfo, nextPage: CityInfo) {
+        cities = previousPages.cities + nextPage.cities
+        error = nextPage.error
+        totalPages = nextPage.totalPages
+        currentPage = nextPage.currentPage
+    }
 }
