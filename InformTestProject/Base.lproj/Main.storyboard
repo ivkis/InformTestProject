@@ -29,25 +29,6 @@
             </objects>
             <point key="canvasLocation" x="1540" y="215"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="Pga-kM-HXU">
-            <objects>
-                <viewController id="LwW-gi-ync" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Os3-yZ-iPP"/>
-                        <viewControllerLayoutGuide type="bottom" id="MKM-eK-0rh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HLb-Xi-dHZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="fYT-sS-1iF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ewi-uI-qbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1540" y="-475"/>
-        </scene>
         <!--Item 4-->
         <scene sceneID="q96-SN-gbU">
             <objects>
@@ -239,6 +220,35 @@
             </objects>
             <point key="canvasLocation" x="630" y="-727"/>
         </scene>
+        <!--City Info-->
+        <scene sceneID="jE0-bq-bvp">
+            <objects>
+                <tableViewController id="7nr-ot-84V" customClass="CityTableViewController" customModule="InformTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2pe-rc-PCO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="1Yw-V2-NmS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Yw-V2-NmS" id="l1u-gv-8V3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7nr-ot-84V" id="IEf-8v-yUl"/>
+                            <outlet property="delegate" destination="7nr-ot-84V" id="SVe-ao-oKt"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="City Info" id="C1t-b1-acY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5A8-rc-9ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="-511"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dga-Zy-AQP">
             <objects>
@@ -250,9 +260,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="upx-mD-BbI" kind="relationship" relationship="viewControllers" id="7tv-Fe-rNi"/>
-                        <segue destination="LwW-gi-ync" kind="relationship" relationship="viewControllers" id="uTp-fc-zD1"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="MUP-Af-5FL"/>
                         <segue destination="iil-2O-sYi" kind="relationship" relationship="viewControllers" id="6Lu-Ed-hHc"/>
+                        <segue destination="7nr-ot-84V" kind="relationship" relationship="viewControllers" id="xSV-a6-UoS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Da-Zg-yy7" userLabel="First Responder" sceneMemberID="firstResponder"/>

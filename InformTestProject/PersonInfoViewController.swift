@@ -17,7 +17,7 @@ class PersonInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        clearLabels()
     }
 
     @IBAction func updateButtonTapped(_ sender: Any) {
@@ -25,9 +25,7 @@ class PersonInfoViewController: UIViewController {
     }
 
     func loadData() {
-        self.nameLabel.text = ""
-        self.dateLabel.text = ""
-        self.descriptionLabel.text = ""
+        clearLabels()
         API.shared.getPersonInfo { personInfo in
             if let personInfo = personInfo {
                 self.nameLabel.text = personInfo.name
@@ -44,6 +42,12 @@ class PersonInfoViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
+    }
+
+    func clearLabels() {
+        self.nameLabel.text = ""
+        self.dateLabel.text = ""
+        self.descriptionLabel.text = ""
     }
 }
 
