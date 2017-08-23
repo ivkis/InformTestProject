@@ -50,4 +50,3 @@ class PersonInfoViewController: UIViewController {
         self.descriptionLabel.text = ""
     }
 }
-

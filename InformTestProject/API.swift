@@ -93,6 +93,45 @@ class API {
             asyncCallback(BirthdaysResponse(future: futureBirthdays, past: pastBirthdays))
         }
     }
+
+    func getCounter(callback: @escaping (Int?) -> Void) {
+        let asyncCallback = { (response: Int?) in
+            DispatchQueue.main.async {
+                callback(response)
+            }
+        }
+        getJSON(url: Constants.urlCounter) { json in
+            guard let json = json as? [String: AnyObject] else {
+                print("Non-dictionary response")
+                asyncCallback(nil)
+                return
+            }
+            let valueCounter = Int(json["value"] as? String ?? "invalid")
+            asyncCallback(valueCounter)
+        }
+    }
+
+    func setCounter(delta: Int, callback: @escaping (Int?) -> Void) {
+        let asyncCallback = { (response: Int?) in
+            DispatchQueue.main.async {
+                callback(response)
+            }
+        }
+        var components = URLComponents(url: Constants.urlCounter, resolvingAgainstBaseURL: false)!
+        components.queryItems = [
+            URLQueryItem(name: "delta", value: String(abs(delta))),
+            URLQueryItem(name: "action", value: delta >= 0 ? "increment": "decrement")
+        ]
+        getJSON(url: components.url!) { json in
+            guard let json = json as? [String: AnyObject] else {
+                print("Unable to send data")
+                asyncCallback(nil)
+                return
+            }
+            let valueCounter = Int(json["value"] as? String ?? "invalid")
+            asyncCallback(valueCounter)
+        }
+    }
 }
 
 
