@@ -26,7 +26,11 @@ class CityTableViewController: UITableViewController {
         if section == 0 {
             return cityInfo?.cities.count ?? 0
         } else {
-            return 1
+            if let cityInfo = cityInfo, cityInfo.currentPage == cityInfo.totalPages - 1 {
+                return 0
+            } else {
+                return 1
+            }
         }
     }
 
