@@ -14,6 +14,7 @@ class BirthdayDateViewController: UIViewController {
     var birthdayTimer = Timer()
     var allBirthdays: API.BirthdaysResponse?
     var birthdays: [BirthdayInfo]?
+    var refreshControl:UIRefreshControl!
 
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -23,7 +24,13 @@ class BirthdayDateViewController: UIViewController {
         super.viewDidLoad()
         tableView.rowHeight = 70
         updateButton.isHidden = true
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControlChanged(self.segmentedControl)
         startBirthdayTimer()
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Идет обновление...")
+        refreshControl.addTarget(self, action: #selector(self.loadData), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
 
         loadData()
     }
@@ -44,11 +51,10 @@ class BirthdayDateViewController: UIViewController {
 
     func loadData() {
         API.shared.getBirthdayDate { response in
-            if let response = response {
-                self.allBirthdays = response
-                self.segmentedControl.selectedSegmentIndex = 0
-                self.segmentedControlChanged(self.segmentedControl)
-            } else {
+            self.refreshControl.endRefreshing()
+            self.allBirthdays = response
+            self.segmentedControlChanged(self.segmentedControl)
+            if response == nil {
                 self.updateButton.isHidden = false
             }
         }
