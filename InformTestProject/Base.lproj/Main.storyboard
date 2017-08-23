@@ -111,7 +111,7 @@
         <!--Counter-->
         <scene sceneID="q96-SN-gbU">
             <objects>
-                <viewController id="iil-2O-sYi" sceneMemberID="viewController">
+                <viewController id="iil-2O-sYi" customClass="CounterViewController" customModule="InformTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="634-gI-cUM"/>
                         <viewControllerLayoutGuide type="bottom" id="CSq-5J-Yvs"/>
@@ -120,24 +120,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ykR-C3-4H0">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.058823529630000003" green="0.180392161" blue="0.24705882370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="KLV-hJ-zWA"/>
-                                    <constraint firstAttribute="width" constant="100" id="b7C-8U-TKN"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="50"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbx-3r-CZU">
-                                <rect key="frame" x="26" y="450.5" width="141" height="30"/>
+                                <rect key="frame" x="26" y="490" width="141" height="30"/>
                                 <color key="backgroundColor" red="0.058823529630000003" green="0.180392161" blue="0.24705882370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="Tm8-9e-BgX"/>
@@ -152,7 +136,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnJ-Gw-SRG">
-                                <rect key="frame" x="208" y="451" width="141" height="30"/>
+                                <rect key="frame" x="208" y="490.5" width="141" height="30"/>
                                 <color key="backgroundColor" red="0.058823529630000003" green="0.180392161" blue="0.24705882370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="mkJ-lu-uHT"/>
@@ -166,18 +150,37 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERl-1x-ajt">
+                                <rect key="frame" x="137" y="283.5" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.058823529630000003" green="0.180392161" blue="0.24705882370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1HH-mQ-2LG"/>
+                                    <constraint firstAttribute="width" constant="100" id="hoP-vA-hLh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529409999999" green="0.18039215689999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="tnJ-Gw-SRG" firstAttribute="top" secondItem="ykR-C3-4H0" secondAttribute="bottom" constant="67.5" id="JM0-cr-iR3"/>
-                            <constraint firstItem="ykR-C3-4H0" firstAttribute="centerX" secondItem="7yq-Ac-F4I" secondAttribute="centerX" id="Yjm-bK-855"/>
-                            <constraint firstItem="ykR-C3-4H0" firstAttribute="centerY" secondItem="7yq-Ac-F4I" secondAttribute="centerY" id="gpE-Im-Rvi"/>
-                            <constraint firstItem="Cbx-3r-CZU" firstAttribute="top" secondItem="ykR-C3-4H0" secondAttribute="bottom" constant="67" id="ia6-5d-ZfO"/>
+                            <constraint firstItem="tnJ-Gw-SRG" firstAttribute="top" secondItem="ERl-1x-ajt" secondAttribute="bottom" constant="107" id="6xC-XX-tft"/>
+                            <constraint firstItem="ERl-1x-ajt" firstAttribute="centerX" secondItem="7yq-Ac-F4I" secondAttribute="centerX" id="Fka-fq-7wA"/>
+                            <constraint firstItem="ERl-1x-ajt" firstAttribute="centerY" secondItem="7yq-Ac-F4I" secondAttribute="centerY" id="ZTC-9N-NuB"/>
+                            <constraint firstItem="Cbx-3r-CZU" firstAttribute="top" secondItem="ERl-1x-ajt" secondAttribute="bottom" constant="106.5" id="n6u-3w-aWX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tnJ-Gw-SRG" secondAttribute="trailing" constant="10" id="wag-J2-dhN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Cbx-3r-CZU" secondAttribute="leading" constant="-10" id="ywL-wx-7Pb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Counter" id="CDg-SB-lKa"/>
+                    <connections>
+                        <outlet property="valueCounterLabel" destination="ERl-1x-ajt" id="xRl-jC-JsD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHk-wg-Chf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
