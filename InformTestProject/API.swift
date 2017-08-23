@@ -11,6 +11,10 @@ import UIKit
 
 
 class API {
+    struct BirthdaysResponse {
+        let future: [BirthdayInfo]
+        let past: [BirthdayInfo]
+    }
 
     static let shared = API()
 
@@ -67,5 +71,28 @@ class API {
             asyncCallback(cityInfo)
         }
     }
+
+    func getBirthdayDate(callback: @escaping (BirthdaysResponse?) -> Void) {
+        let asyncCallback = { (response: BirthdaysResponse? ) in
+            DispatchQueue.main.async {
+                callback(response)
+            }
+        }
+        getJSON(url: Constants.urlBirthday) { json in
+            guard let json = json as? [String: AnyObject] else {
+                print("Non-dictionary response")
+                asyncCallback(nil)
+                return
+            }
+            guard let past = json["past"] as? [[String: AnyObject]], let future = json["future"] as? [[String: AnyObject]] else {
+                asyncCallback(nil)
+                return
+            }
+            let pastBirthdays = past.map { dict in BirthdayInfo(json: dict) }
+            let futureBirthdays = future.map { dict in BirthdayInfo(json: dict) }
+            asyncCallback(BirthdaysResponse(future: futureBirthdays, past: pastBirthdays))
+        }
+    }
 }
+
 

@@ -20,6 +20,8 @@
 		A7CD55D81F4879D300034574 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD55D71F4879D300034574 /* API.swift */; };
 		A7CD55DA1F4879FE00034574 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD55D91F4879FE00034574 /* Constants.swift */; };
 		A7CD55DC1F48893E00034574 /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD55DB1F48893E00034574 /* CityInfo.swift */; };
+		A7F418601F4C883200E08A29 /* BirthdayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4185F1F4C883200E08A29 /* BirthdayDateViewController.swift */; };
+		A7F418621F4C8AC500E08A29 /* BirthdayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F418611F4C8AC500E08A29 /* BirthdayInfo.swift */; };
 		F8AFE41399350BCD96BD076F /* Pods_InformTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC883FE794E30A021B8198CD /* Pods_InformTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		A7CD55D71F4879D300034574 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A7CD55D91F4879FE00034574 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7CD55DB1F48893E00034574 /* CityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
+		A7F4185F1F4C883200E08A29 /* BirthdayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayDateViewController.swift; sourceTree = "<group>"; };
+		A7F418611F4C8AC500E08A29 /* BirthdayInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayInfo.swift; sourceTree = "<group>"; };
 		CC883FE794E30A021B8198CD /* Pods_InformTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InformTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E84935F7280951975A5C53 /* Pods-InformTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InformTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-InformTestProject/Pods-InformTestProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,8 @@
 			children = (
 				A79744871F486B3800573091 /* AppDelegate.swift */,
 				A7CD55D71F4879D300034574 /* API.swift */,
+				A7F4185F1F4C883200E08A29 /* BirthdayDateViewController.swift */,
+				A7F418611F4C8AC500E08A29 /* BirthdayInfo.swift */,
 				A7CD55D91F4879FE00034574 /* Constants.swift */,
 				A7CD55DB1F48893E00034574 /* CityInfo.swift */,
 				A7876D041F4983F800AED4A0 /* CityTableViewController.swift */,
@@ -251,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F418601F4C883200E08A29 /* BirthdayDateViewController.swift in Sources */,
 				A7876D051F4983F800AED4A0 /* CityTableViewController.swift in Sources */,
 				A7CD55D61F48780000034574 /* Person.swift in Sources */,
 				A797448A1F486B3800573091 /* PersonInfoViewController.swift in Sources */,
@@ -258,6 +265,7 @@
 				A79744881F486B3800573091 /* AppDelegate.swift in Sources */,
 				A79744901F486B3800573091 /* InformTestProject.xcdatamodeld in Sources */,
 				A7CD55DA1F4879FE00034574 /* Constants.swift in Sources */,
+				A7F418621F4C8AC500E08A29 /* BirthdayInfo.swift in Sources */,
 				A7CD55D81F4879D300034574 /* API.swift in Sources */,
 				A7CD55DC1F48893E00034574 /* CityInfo.swift in Sources */,
 				A797449E1F4872FB00573091 /* R.generated.swift in Sources */,
