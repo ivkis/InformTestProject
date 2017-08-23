@@ -11,6 +11,7 @@ import UIKit
 
 class BirthdayDateViewController: UIViewController {
 
+    var birthdayTimer = Timer()
     var allBirthdays: API.BirthdaysResponse?
     var birthdays: [BirthdayInfo]?
 
@@ -22,12 +23,8 @@ class BirthdayDateViewController: UIViewController {
         super.viewDidLoad()
         tableView.rowHeight = 70
         updateButton.isHidden = true
+        startBirthdayTimer()
 
-//        loadData()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         loadData()
     }
 
@@ -56,6 +53,31 @@ class BirthdayDateViewController: UIViewController {
             }
         }
     }
+
+    func updateVisibleLabels() {
+        guard let indexPaths = tableView.indexPathsForVisibleRows else {
+            return
+        }
+        let now = Date().timeIntervalSince1970
+        for indexPath in indexPaths {
+            let cell = tableView.cellForRow(at: indexPath)
+            let birthday = birthdays![indexPath.row]
+            let intervalFromBirthday = abs(now - birthday.time)
+            cell?.textLabel?.text = stringFromTime(interval: intervalFromBirthday)
+        }
+    }
+
+    func startBirthdayTimer() {
+        birthdayTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+            self?.updateVisibleLabels()
+        }
+    }
+
+    func stringFromTime(interval: TimeInterval) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.day, .hour, .minute, .second]
+        return formatter.string(from: interval) ?? ""
+    }
 }
 
 extension BirthdayDateViewController: UITableViewDataSource {
@@ -66,7 +88,9 @@ extension BirthdayDateViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.birthdayDateCell, for: indexPath)!
         let birthday = birthdays![indexPath.row]
-        cell.textLabel?.text = String(birthday.time)
+        let intervalFromBirthday = abs(Date().timeIntervalSince1970 - birthday.time)
+
+        cell.textLabel?.text = stringFromTime(interval: intervalFromBirthday)
         cell.detailTextLabel?.text = birthday.name
         return cell
     }
