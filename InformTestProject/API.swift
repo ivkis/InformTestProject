@@ -128,7 +128,7 @@ class API {
                 asyncCallback(nil)
                 return
             }
-            let valueCounter = Int(json["value"] as? String ?? "invalid")
+            let valueCounter = json["value"] as? Int
             asyncCallback(valueCounter)
         }
     }
