@@ -11,7 +11,7 @@ import UIKit
 
 class CounterViewController: UIViewController {
 
-    @IBOutlet weak var valueCounterLabel: UILabel!
+    var dataLoad: Bool?
     var counterTimer = Timer()
     var serverValue: Int?
     var currentValue: Int? {
@@ -22,6 +22,9 @@ class CounterViewController: UIViewController {
             self.valueCounterLabel.text = newValue == nil ? "" : String(newValue!)
         }
     }
+    var isSendingRequest = false
+
+    @IBOutlet weak var valueCounterLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +46,15 @@ class CounterViewController: UIViewController {
     }
 
     func sendData() {
-        guard let currentValue = Int(valueCounterLabel.text ?? "invalid") else {
+        guard let currentValue = currentValue, let serverValue = serverValue, !isSendingRequest else {
             return
         }
-        guard let serverValue = serverValue else {
-            return
-        }
+        counterTimer.invalidate()
         let delta = currentValue - serverValue
         print("Counter: sending delta \(delta)")
+        isSendingRequest = true
         API.shared.setCounter(delta: delta) { valueCounter in
+            self.isSendingRequest = false
             if let valueCounter = valueCounter {
                 print("Counter: received updated value: \(valueCounter)")
                 self.serverValue = valueCounter
@@ -67,7 +70,7 @@ class CounterViewController: UIViewController {
             return
         }
         self.currentValue = currentValue + 1
-        counterTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] timer in
+        counterTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             self?.sendData()
         }
     }
@@ -79,7 +82,7 @@ class CounterViewController: UIViewController {
             return
         }
         self.currentValue = currentValue - 1
-        counterTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] timer in
+        counterTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             self?.sendData()
         }
     }

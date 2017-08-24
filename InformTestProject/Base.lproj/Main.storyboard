@@ -28,6 +28,7 @@
                                     <segment title="Прошедшие"/>
                                     <segment title="Предстоящие"/>
                                 </segments>
+                                <color key="tintColor" red="0.058823529409999999" green="0.18039215689999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ppl-jf-lgk"/>
                                 </connections>
